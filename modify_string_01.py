@@ -17,23 +17,23 @@ Examples:
 Modify funnction 'get_result_str' such that it provides output string for given input string
 '''
 
-def get_result_str(test_string):
-    # print(test_string)
-    output_string_list = ''
+def get_result_str(input_string):
+    # print(input_string)
+    output_string = ''
     count_char = 1
     prev_char = ''
-    for item in list(test_string):
+    for item in list(input_string):
         if prev_char != item:
-            if len(output_string_list) != 0:
-                output_string_list += str(count_char)
-            output_string_list += item
+            if len(output_string) != 0:
+                output_string += str(count_char)
+            output_string += item
             count_char = 1
         else:
             count_char += 1
         prev_char = item
-    output_string_list += str(count_char)
-    # print(output_string_list)
-    return output_string_list
+    output_string += str(count_char)
+    # print(output_string)
+    return output_string
 
 def run_test_func():
     a, b = 'SUCCESS', 'FAIL'
