@@ -17,8 +17,6 @@ Examples:
 Modify funnction 'get_result_str' such that it provides output string for given input string
 '''
 
-import json
-
 def get_result_str(test_string):
     # print(test_string)
     output_string_list = ''
@@ -38,28 +36,11 @@ def get_result_str(test_string):
     return output_string_list
 
 def run_test_func():
-    test_cases = {
-        "tests": [
-            {
-                "test_string": "aaa",
-                "output_string": "a3"
-            },
-            {
-                "test_string": "abababab",
-                "output_string": "a1b1a1b1a1b1a1b1"
-            },
-            {
-                "test_string": "aaaabbbbaaacccccc",
-                "output_string": "a4b4a3c6"
-            }
-        ]
-    }
+    a, b = 'SUCCESS', 'FAIL'
+    print({True:a , False:b } [get_result_str('aaa') == 'a3'])
+    print({True:a , False:b } [get_result_str('abababab') == 'a1b1a1b1a1b1a1b1'])
+    print({True:a , False:b } [get_result_str('aaaabbbbaaacccccc') == 'a4b4a3c6'])
 
-    for test_item in test_cases["tests"]:
-        if get_result_str(test_item['test_string']) == test_item['output_string']:
-            print('SUCCESS')
-        else:
-            print('FAIL')
 
 if __name__ == '__main__':
     run_test_func()
